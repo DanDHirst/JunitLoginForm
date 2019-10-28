@@ -5,10 +5,31 @@
  */
 package loginapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dhirst1
  */
 public class loginSystem {
+    ArrayList<User> users = new ArrayList<>();
+
+    public loginSystem() {
+    }
+    
+    public boolean register(String name,String password,String username){
+        User newUser = new User(name, username, password);
+        if(users != null){
+            for (int i = 0; i < users.size(); i++) {
+                if(username.equals(users.get(i).getUsername())){
+                    return false;
+                }
+            }  
+        }
+        users.add(newUser);
+        return true;
+        
+        
+    }
     
 }
