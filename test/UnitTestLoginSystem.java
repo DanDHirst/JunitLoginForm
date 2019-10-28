@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 
+import java.util.ArrayList;
+import loginapp.User;
+import loginapp.loginSystem;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -41,4 +43,19 @@ public class UnitTestLoginSystem {
     //
     // @Test
     // public void hello() {}
+    public void register(){
+        loginSystem system = new loginSystem();
+        system.register("dan", "123", "dan");
+        ArrayList<User> user = system.getUsers();
+        
+
+        assertEquals("check the name", "dan",user.get(0).getName());
+        assertEquals("check the password", "123",user.get(0).getPassword());
+        assertEquals("check the username", "dan",user.get(0).getUsername());
+        
+    }
+    
+    public void login(){
+        
+    }
 }

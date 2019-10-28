@@ -54,5 +54,10 @@ public class loginSystem {
             return false;
         }
     }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+    
     
 }

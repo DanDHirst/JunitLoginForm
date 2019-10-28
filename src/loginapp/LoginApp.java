@@ -16,6 +16,9 @@ public class LoginApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        loginSystem system = new loginSystem();
+        system.register("dan", "123", "dan");
+        System.out.println(system.users.get(0).getName());
     }
     
 }
